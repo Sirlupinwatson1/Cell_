@@ -24,7 +24,7 @@ namespace controllibrary
             while (mutex.WaitOne(0))
             {
                 mutex.ReleaseMutex();
-                MessageBox.Show("لطفا نرم افزار مرکزی را باز کنید.");
+                MessageBox.Show("Please open the central application.");
             }
             userselector = new userselector(text, userselect);
             alluser.addremove_e += Alluser_remove_e;

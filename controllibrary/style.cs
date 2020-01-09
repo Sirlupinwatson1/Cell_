@@ -35,18 +35,16 @@ namespace controllibrary
             dv.add(FrameworkElement.HorizontalAlignmentProperty, HorizontalAlignment.Center);
             return dv;
         }
-        public static style textblock(FlowDirection direction = FlowDirection.RightToLeft)
+        public static style textblock()
         {
             style dv = new style(typeof(TextBlock));
             dv.add(FrameworkElement.MarginProperty, new Thickness(4));
-            dv.add(FrameworkElement.FlowDirectionProperty, direction);
             return dv;
         }
-        public static style textbox(FlowDirection direction = FlowDirection.RightToLeft, bool isreadonly = true)
+        public static style textbox(bool isreadonly = true)
         {
             style dv = new style(typeof(TextBox));
             dv.add(FrameworkElement.MarginProperty, new Thickness(4));
-            dv.add(FrameworkElement.FlowDirectionProperty, direction);
             dv.add(TextBoxBase.IsReadOnlyProperty, isreadonly);
             return dv;
         }

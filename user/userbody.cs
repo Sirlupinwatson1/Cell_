@@ -20,11 +20,11 @@ namespace user
 {
     class userbody
     {
-        public StackPanel panel = new StackPanel() { Width = 400, FlowDirection = FlowDirection.RightToLeft };
+        public StackPanel panel = new StackPanel() { Width = 400 };
         ListBox lstaccounts = new ListBox() { MinHeight = 100 };
         Button btnlogout = new Button()
         {
-            Content = "خروج از حساب انتخاب شده",
+            Content = "Sign out of selected account",
             Padding = new Thickness(8),
             MinWidth = 120,
             Margin = new Thickness(2)
@@ -44,14 +44,14 @@ namespace user
         };
         Button btnback = new Button()
         {
-            Content = "اصلاح شماره تلفن",
+            Content = "Phone number correction",
             Padding = new Thickness(5),
             MinWidth = 120,
             Margin = new Thickness(0, 0, 5, 0)
         };
         Button btnsubmit = new Button()
         {
-            Content = "ارسال",
+            Content = "Send",
             Padding = new Thickness(5),
             MinWidth = 120
         };
@@ -120,7 +120,7 @@ namespace user
                         }
                         else
                         {
-                            MessageBox.Show("کد فعال سازی به درستی وارد نشده است.");
+                            MessageBox.Show("Activation code not entered correctly");
                         }
                     }
                     break;
@@ -173,15 +173,15 @@ namespace user
         Run describtion = new Run() { FontWeight = FontWeights.Normal };
         private void activecodepro()
         {
-            subject.Text = "کد فعال سازی : ";
-            describtion.Text = "این کد تا دقایقی دیگر بر روی تلفن همراه شما پیامک خواهد شد.";
+            subject.Text = "Activation code : ";
+            describtion.Text = "This code will be sent to your mobile in seconds.";
             btnback.IsEnabled = true;
-            btnback.Content = "اصلاح شماره تلفن";
+            btnback.Content = "Phone number correction";
             txt.Focus();
             if (txt.Text.Length == 5)
             {
                 btnsubmit.IsEnabled = true;
-                btnsubmit.Content = "ورود";
+                btnsubmit.Content = "login";
                 state = e_state.submitcode;
             }
             else
@@ -200,14 +200,14 @@ namespace user
         e_state state = e_state.none;
         private void phonepro()
         {
-            subject.Text = "شماره تلفن : ";
-            describtion.Text = "افزودن حساب جدید از طریق شماره تلفن همراه";
+            subject.Text = "Phone number : ";
+            describtion.Text = "Add new account via mobile number";
             btnback.IsEnabled = false;
             btnback.Content = null;
             txt.Focus();
             if (txt.Text.Length == 11)
             {
-                btnsubmit.Content = "ارسال پیامک";
+                btnsubmit.Content = "Send activation code";
                 btnsubmit.IsEnabled = true;
                 state = e_state.submitphone;
             }

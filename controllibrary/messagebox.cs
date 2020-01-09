@@ -18,7 +18,6 @@ namespace controllibrary
             BorderBrush = Brushes.Gray,
             HorizontalAlignment = HorizontalAlignment.Center,
             VerticalAlignment = VerticalAlignment.Center,
-            FlowDirection = FlowDirection.RightToLeft,
             Background = Brushes.White,
             CornerRadius = new CornerRadius(10)
         };
@@ -43,13 +42,13 @@ namespace controllibrary
         {
             rt = new TaskCompletionSource<int>();
             if (message.subject == null)
-                message.subject = "پیام";
+                message.subject = "Message";
             textblock.Inlines.Add(new Run() { Foreground = Brushes.Brown, Text = message.subject, FontSize = 14 });
             textblock.Inlines.Add(new LineBreak());
             textblock.Inlines.Add(new LineBreak());
             textblock.Inlines.Add(new Run() { Foreground = Brushes.Black, Text = message.text, FontSize = 12 });
             if (buttompanel == null || options.Length == 0)
-                options = new string[] { "متوجه شدم" };
+                options = new string[] { "OK" };
             for (int i = 0; i < options.Length; i++)
             {
                 string text = options[i];

@@ -19,7 +19,6 @@ namespace message
         syncdb<s_fulluser, member> syncdb;
         public override void create(long userid)
         {
-            panel.FlowDirection = FlowDirection.RightToLeft;
             syncdb = new syncdb<s_fulluser, member>(userid);
             syncdb.add_e += Syncdb_add_e;
             syncdb.list.reset_e += List_reset_e;

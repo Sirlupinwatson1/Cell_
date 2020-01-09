@@ -14,10 +14,10 @@ namespace usercontact
     {
         public override List<string> itemsource { get; } = new List<string>()
         {
-            "منفصل",
-            "متصل",
-            "محبوب",
-            "مسدود"
+            "Disconnected",
+            "Connected",
+            "Favorite",
+            "Blocked"
         };
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

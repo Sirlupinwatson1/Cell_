@@ -11,11 +11,11 @@ namespace usercontact
 {
     class bodyusercontact : grid
     {
-        textheder hdr_fullname = new textheder("مخاطبان");
+        textheder hdr_fullname = new textheder("Contact");
         columntext fullname = new columntext("user.fullname", style.textblock(), style.textbox());
-        comboheder hdr_mysetting = new comboheder("تنظیمات من");
+        comboheder hdr_mysetting = new comboheder("My Settings");
         columncombo mysetting = new columncombo("ownersetting", new adapter(), style.combobox(), style.combobox());
-        comboheder hdr_partnersetting = new comboheder("تنظیمات او");
+        comboheder hdr_partnersetting = new comboheder("Partner settings");
         columncombo partnersetting = new columncombo("contact.partnersetting", new adapter(), style.combobox(false), style.combobox(false));
         syncdb<s_fulluser, item> db;
         public override void create(long userid)

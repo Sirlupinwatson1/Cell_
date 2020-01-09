@@ -18,7 +18,6 @@ namespace controllibrary
     {
         StackPanel panel = new StackPanel()
         {
-            FlowDirection = FlowDirection.RightToLeft,
             Margin = new Thickness(20, 0, 20, 20)
         };
         TextBlock heder = new TextBlock() { Padding = new Thickness(10) };
@@ -39,12 +38,12 @@ namespace controllibrary
             {
                 FontWeight = FontWeights.Regular,
                 FontSize = 12,
-                Text = "انتخاب کاربر"
+                Text = "User selection"
             });
             panel.Children.Add(heder);
             combo.SelectionChanged += Combo_SelectionChanged;
             panel.Children.Add(combo);
-            lable.Content = "انتخاب کاربر : ";
+            lable.Content = "User selection : ";
             combo.ItemsSource = alluser.list;
             alluser.list.reset_e += List_reset_e;
             autoselect();

@@ -21,7 +21,7 @@ namespace message
     /// </summary>
     public partial class MainWindow : Window
     {
-        private const string title = "پیام رسان";
+        private const string title = "Messenger";
         panel<app> panel = new panel<app>(title);
         public MainWindow()
         {

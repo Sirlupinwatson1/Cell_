@@ -21,7 +21,7 @@ namespace usercontact
     /// </summary>
     public partial class MainWindow : Window
     {
-        private static string titel = "مخاطبان";
+        private static string titel = "Contacts";
         panel<bodyusercontact> panel = new panel<bodyusercontact>(titel);
         public MainWindow()
         {

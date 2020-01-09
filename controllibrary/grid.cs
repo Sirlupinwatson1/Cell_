@@ -20,7 +20,6 @@ namespace controllibrary
         {
             AutoGenerateColumns = false,
             CanUserAddRows = false,
-            FlowDirection = FlowDirection.RightToLeft,
             Margin = new Thickness(20, 0, 20, 20)
         };
         public IEnumerable source

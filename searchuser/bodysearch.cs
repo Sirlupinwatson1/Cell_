@@ -21,16 +21,16 @@ namespace searchuser
         lableheder hdr_contact = new lableheder() { MinWidth = 40 };
         columncheck clm_contact = new columncheck(nameof(item.contact), style.checkbox(), style.checkbox());
 
-        textheder hdr_fullname = new textheder("نام کامل");
+        textheder hdr_fullname = new textheder("Full name");
         columntext clm_fulname = new columntext(nameof(item.fullname), style.textblock(), style.textbox());
 
-        textheder hdr_tell = new textheder("تلفن");
-        columntext clm_code = new columntext(nameof(item.tell), style.textblock(FlowDirection.LeftToRight), style.textbox(FlowDirection.LeftToRight));
+        textheder hdr_tell = new textheder("Phone");
+        columntext clm_code = new columntext(nameof(item.tell), style.textblock(), style.textbox());
 
-        textheder hdr_city = new textheder("شهر");
+        textheder hdr_city = new textheder("City");
         columntext clm_city = new columntext(nameof(item.city), style.textblock(), style.textbox());
 
-        textheder hdr_des = new textheder("توضیحات") { MinWidth = 200 };
+        textheder hdr_des = new textheder("Description") { MinWidth = 200 };
         columntext clm_des = new columntext(nameof(item.description), style.textblock(), style.textbox());
 
 

@@ -23,7 +23,7 @@ namespace profile
     /// </summary>
     public partial class MainWindow : Window
     {
-        private const string title = "پروفایل";
+        private const string title = "Profile";
         panel<profilebody> panel = new panel<profilebody>(title);
         public MainWindow()
         {

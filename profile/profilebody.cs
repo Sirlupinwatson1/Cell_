@@ -20,33 +20,32 @@ namespace profile
     {
         StackPanel panel = new StackPanel()
         {
-            Margin = new Thickness(20, 0, 20, 20),
-            FlowDirection = FlowDirection.RightToLeft
+            Margin = new Thickness(20, 0, 20, 20)
         };
-        Label lblfullname = new Label() { Content = "نام کامل : " };
+        Label lblfullname = new Label() { Content = "Full name : " };
         TextBox txtfullname = new TextBox();
 
-        Label lbldescribtion = new Label() { Content = "توضیحات" };
+        Label lbldescribtion = new Label() { Content = "Description" };
         textbox txtdescribtion = new textbox();
 
-        Label lblcity = new Label() { Content = "شهر : " };
+        Label lblcity = new Label() { Content = "City : " };
         TextBox txtcity = new TextBox() { MaxLength = 20 };
 
-        Label lblnationalcode = new Label() { Content = "شناسه ملی : " };
+        Label lblnationalcode = new Label() { Content = "National ID : " };
         TextBox txtnationalcode = new TextBox() { FlowDirection = FlowDirection.LeftToRight };
 
-        Label lbltell = new Label() { Content = "تلفن تماس : " };
+        Label lbltell = new Label() { Content = "Phone Call : " };
         TextBox txttell = new TextBox() { FlowDirection = FlowDirection.LeftToRight };
 
-        Label lblgender = new Label() { Content = "ماهیت : " };
+        Label lblgender = new Label() { Content = "nature : " };
         ComboBox cmbgender = new ComboBox()
         {
-            ItemsSource = new string[] { "نامشخص", "مرد", "زن", "کسب و کار" }
+            ItemsSource = new string[] { "Unknown", "Man", "Female", "Business" }
         };
 
         Button btnsave = new Button()
         {
-            Content = "ثبت اطلاعات",
+            Content = "Submit information",
             Padding = new Thickness(5),
             HorizontalAlignment = HorizontalAlignment.Center,
             MinWidth = 200
@@ -114,7 +113,7 @@ namespace profile
                 return;
             var rsv = await client.question(new q_upsertuser() { user = user }) as q_upsertuser.done;
             if (rsv.error_duplicate)
-                await messagebox.maindilog((null, "این نام قبلا به ثبت رسیده است. لطفا آن را تغییر دهید"));
+                await messagebox.maindilog((null, "This name has already been registered. Please change it"));
             loadbox.mainrelease();
         }
         async Task<bool> valid()
@@ -122,22 +121,22 @@ namespace profile
             string text = txtfullname.Text;
             if (text.Length < 5)
             {
-                await messagebox.maindilog("طول نام انتخاب شده کمتر از حد مجاز است");
+                await messagebox.maindilog("The selected name is less than the allowed length");
                 return false;
             }
             if (text.Length > 25)
             {
-                await messagebox.maindilog("طول نام انتخاب شده بیشتر از حد مجاز است");
+                await messagebox.maindilog("Selected name exceeds the maximum length");
                 return false;
             }
             if (text.Contains("  "))
             {
-                await messagebox.maindilog("میان کلمات تنها از یک فاصله استفاده کنید");
+                await messagebox.maindilog("Use only one space between words");
                 return false;
             }
             if (text.First() == ' ' || text.Last() == ' ')
             {
-                await messagebox.maindilog("در ابتدا یا انتهای نام فاصله نگذارید");
+                await messagebox.maindilog("Don't leave any space at the beginning or end of the name");
                 return false;
             }
             foreach (var i in text)
@@ -146,7 +145,7 @@ namespace profile
                     continue;
                 if (!char.IsLetter(i))
                 {
-                    await messagebox.maindilog("در نام از کارکتر غیر مجاز استفاده شده است");
+                    await messagebox.maindilog("The name uses an unauthorized character");
                     return false;
                 }
             }

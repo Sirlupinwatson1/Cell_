@@ -14,7 +14,7 @@ namespace message
     class app : uiapp
     {
         long userid = 0;
-        DockPanel panel = new DockPanel() { FlowDirection = FlowDirection.RightToLeft };
+        DockPanel panel = new DockPanel();
         members members = new members();
         loadbox loadbox = new loadbox();
         List<chatbox> list = new List<chatbox>();

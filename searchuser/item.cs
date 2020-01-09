@@ -34,20 +34,20 @@ namespace searchuser
                 return;
             if (value)
             {
-                if (await messagebox.maindilog((null, addmessage), "اضافه شود", "لغو درخواست") == 0)
+                if (await messagebox.maindilog((null, addmessage), "Add", "Cancel") == 0)
                 {
                     await client.question(owner, new q_upsertcontact() { partner = id, setting = e_contactsetting.connect });
                 }
             }
             else
             {
-                if (await messagebox.maindilog((null, removemessage), "حذف شود", "لغو درخواست") == 0)
+                if (await messagebox.maindilog((null, removemessage), "Delete", "Cancel") == 0)
                 {
                     await client.question(owner, new q_upsertcontact() { partner = id, setting = e_contactsetting.disconnect });
                 }
             }
         }
-        private string addmessage => "آیا مطمعن هستید که میخواهید " + fullname + " را به مخاطبان خود اضافه کنید؟";
-        private string removemessage => "آیا مطمعن هستید که میخواهید " + fullname + " را از لیست مخاطبان خود حذف کنید؟";
+        private string addmessage => "Are you sure you want to " + fullname + " add to your contact?";
+        private string removemessage => "Are you sure you want to " + fullname + " remove from your contact list?";
     }
 }

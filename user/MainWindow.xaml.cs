@@ -37,7 +37,7 @@ namespace user
             if (!mutex.WaitOne(0))
             {
                 mutex.ReleaseMutex();
-                MessageBox.Show("نرم افزار مرکزی باز است.");
+                MessageBox.Show("Central application is open.");
                 Close();
                 return;
             }
@@ -47,7 +47,7 @@ namespace user
             Directory.CreateDirectory(reference.root("", "message"));
             Directory.CreateDirectory(reference.root("", "allapps"));
             InitializeComponent();
-            Title = "مرکزی";
+            Title = "Central";
             SizeToContent = SizeToContent.WidthAndHeight;
             ini();
             allapps.start();
@@ -56,7 +56,7 @@ namespace user
 
         async void runing()
         {
-            Title = "پالس" + " " + clientspeed.n + " " + "مرکزی";
+            Title = "Central " + clientspeed.n + " pulse";
             await Task.Delay(500);
             uibase.run(runing);
         }

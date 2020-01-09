@@ -20,7 +20,7 @@ namespace searchuser
     /// </summary>
     public partial class MainWindow : Window
     {
-        private const string title = "جستجوی کاربران";
+        private const string title = "Search for users";
         panel<bodysearch> panel = new panel<bodysearch>(title);
         internal static MainWindow ds;
         public MainWindow()
