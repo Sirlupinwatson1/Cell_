@@ -11,17 +11,16 @@ namespace user
 {
     class allapps
     {
+        const string baseroot = @"rulingcode/Cell_";
         static string root = "";
-        const string dll = @"interlink32/Cell/abcd/bin/Debug/netstandard2.0";
-        const string exe = @"interlink32/Cell/abcd/bin/Debug";
+        const string dll = baseroot + @"/abcd/bin/Debug/netstandard2.0";
+        const string exe = baseroot + @"/abcd/bin/Debug";
         public static void start()
         {
-
-            //C:\Users\mohsen\Source\Repos\interlink32\Cell\abcd\bin\Debug\
             root = Assembly.GetAssembly(typeof(allapps)).CodeBase.Replace(@"file:///", "");
-            if (!root.Contains(@"Repos/interlink32/Cell"))
+            if (!root.Contains(@"Repos/" + baseroot))
                 return;
-            root = root.Split(new string[] { @"interlink32/Cell" }, StringSplitOptions.RemoveEmptyEntries)[0];
+            root = root.Split(new string[] { baseroot }, StringSplitOptions.RemoveEmptyEntries)[0];
 
             copystandard("stemcell", ".dll");
             copystandard("Dna", ".dll");
